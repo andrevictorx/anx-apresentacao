@@ -4,14 +4,13 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>ANX — Apresentação Institucional · Modelo de Negócios</title>
-  <meta name="description" content="ANX — Consultoria e Soluções Industriais. Automação, robótica, software industrial e treinamentos para a pequena indústria. Modelo de negócios e cases reais (MFS Palletizer e Mili S.A.)." />
+  <meta name="description" content="ANX — Consultoria e Soluções Industriais. Automação, robótica, software industrial e treinamentos para a pequena indústria. Modelo de negócios (CANVAS) e cases reais (MFS Palletizer e Mili S.A.)." />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="ANX — Apresentação Institucional · Modelo de Negócios" />
   <meta property="og:description" content="Engenharia que a indústria vê funcionando. Automação, robótica, software e capacitação técnica 100% personalizados, documentados e com suporte." />
   <meta property="og:url" content="https://andrevictorx.github.io/anx-apresentacao/" />
   <meta property="og:image" content="https://andrevictorx.github.io/anx-apresentacao/assets/og-cover.png" />
-  <meta property="og:image:width" content="1600" />
-  <meta property="og:image:height" content="900" />
+  <meta property="og:image:width" content="1600" /><meta property="og:image:height" content="900" />
   <meta name="twitter:card" content="summary_large_image" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,60 +18,27 @@
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Baloo+2:wght@700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#0A2A43;
-  --deep:#071726;
-  --ink:#050B12;
-  --cyan:#1BC6E8;
-  --steel:#0F4C81;
-  --ice:#9FC4DD;
-  --line:rgba(27,198,232,.22);
-  --line-soft:rgba(159,196,221,.12);
-  --white:#EAF4FA;
-  --mut:#7E97AB;
-  --disp:'Space Grotesk',sans-serif;
-  --body:'Inter',sans-serif;
-  --mono:'JetBrains Mono',monospace;
+  --navy:#0A2A43;--deep:#071726;--ink:#050B12;--cyan:#1BC6E8;--steel:#0F4C81;--ice:#9FC4DD;
+  --line:rgba(27,198,232,.22);--line-soft:rgba(159,196,221,.12);--white:#EAF4FA;--mut:#7E97AB;
+  --disp:'Space Grotesk',sans-serif;--body:'Inter',sans-serif;--mono:'JetBrains Mono',monospace;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{height:100%}
-body{
-  background:var(--ink);
-  color:var(--white);
-  font-family:var(--body);
-  overflow:hidden;
-  -webkit-font-smoothing:antialiased;
-}
+body{background:var(--ink);color:var(--white);font-family:var(--body);overflow:hidden;-webkit-font-smoothing:antialiased;}
 
-/* ---------- DECK FRAME ---------- */
+/* ---------- DECK ---------- */
 .deck{position:fixed;inset:0;}
-.slide{
-  position:absolute;inset:0;
-  display:flex;flex-direction:column;
-  padding:clamp(28px,5vw,90px);
-  opacity:0;visibility:hidden;
-  transform:translateY(26px) scale(.992);
-  transition:opacity .65s cubic-bezier(.16,1,.3,1),
-             transform .65s cubic-bezier(.16,1,.3,1),
-             visibility 0s linear .65s;
-  overflow:hidden;
-}
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;padding:clamp(18px,3vw,50px) clamp(22px,3.4vw,64px);
+  opacity:0;visibility:hidden;transform:translateY(26px) scale(.992);
+  transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1),visibility 0s linear .65s;overflow:hidden;}
 .slide.active{opacity:1;visibility:visible;transform:none;transition-delay:0s;z-index:2;}
 .slide.prev{transform:translateY(-26px) scale(.992);}
-
-/* blueprint grid background on every slide */
-.slide::before{
-  content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
-  background-image:
-    linear-gradient(var(--line-soft) 1px,transparent 1px),
-    linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);
-  background-size:46px 46px;
+.slide::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:linear-gradient(var(--line-soft) 1px,transparent 1px),linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);
+  background-size:48px 48px;
   -webkit-mask-image:radial-gradient(ellipse 90% 80% at 50% 40%,#000 35%,transparent 100%);
-          mask-image:radial-gradient(ellipse 90% 80% at 50% 40%,#000 35%,transparent 100%);
-  opacity:.5;
-}
+          mask-image:radial-gradient(ellipse 90% 80% at 50% 40%,#000 35%,transparent 100%);opacity:.5;}
 .slide>*{position:relative;z-index:1}
-
-/* reveal children when active */
 .slide .r{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s cubic-bezier(.16,1,.3,1);}
 .slide.active .r{opacity:1;transform:none}
 .slide.active .r:nth-child(1){transition-delay:.10s}
@@ -82,280 +48,207 @@ body{
 .slide.active .r:nth-child(5){transition-delay:.42s}
 .slide.active .r:nth-child(6){transition-delay:.50s}
 
-/* ---------- SHARED TYPE ---------- */
-.eyebrow{
-  font-family:var(--mono);font-size:12px;letter-spacing:.32em;text-transform:uppercase;
-  color:var(--cyan);display:inline-flex;align-items:center;gap:10px;
-}
-.eyebrow::before{content:"";width:26px;height:1px;background:var(--cyan);display:inline-block}
-h1.title{font-family:var(--disp);font-weight:700;line-height:1.02;letter-spacing:-.02em;
-  font-size:clamp(34px,6vw,76px);}
-h2.head{font-family:var(--disp);font-weight:700;line-height:1.05;letter-spacing:-.015em;
-  font-size:clamp(28px,4.4vw,54px);}
-.lead{font-size:clamp(15px,1.5vw,20px);color:var(--ice);max-width:62ch;line-height:1.55}
+/* ---------- TYPE ---------- */
+.eyebrow{font-family:var(--mono);font-size:13px;letter-spacing:.32em;text-transform:uppercase;color:var(--cyan);display:inline-flex;align-items:center;gap:10px;}
+.eyebrow::before{content:"";width:28px;height:1px;background:var(--cyan);display:inline-block}
+h1.title{font-family:var(--disp);font-weight:700;line-height:1.02;letter-spacing:-.02em;font-size:clamp(40px,6.4vw,92px);}
+h2.head{font-family:var(--disp);font-weight:700;line-height:1.04;letter-spacing:-.015em;font-size:clamp(34px,5vw,64px);}
+.lead{font-size:clamp(17px,1.65vw,24px);color:var(--ice);max-width:68ch;line-height:1.55}
 .cy{color:var(--cyan)}
-.mono{font-family:var(--mono)}
-
-/* ---------- HEADER RAIL ---------- */
 .railtop{display:flex;justify-content:space-between;align-items:center;margin-bottom:auto;}
-.brandmark{font-family:var(--disp);font-weight:700;font-size:20px;letter-spacing:.04em}
+.brandmark{font-family:var(--disp);font-weight:700;font-size:22px;letter-spacing:.04em}
 .brandmark .x{color:var(--cyan)}
-.kicker{font-family:var(--mono);font-size:11px;letter-spacing:.28em;color:var(--mut);text-transform:uppercase}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.26em;color:var(--mut);text-transform:uppercase}
 
-/* ---------- BOTTOM NAV/PROGRESS ---------- */
-.hud{
-  position:fixed;left:0;right:0;bottom:0;z-index:50;
-  display:flex;align-items:center;gap:18px;
-  padding:14px clamp(20px,5vw,90px);
-  font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--mut);
-  background:linear-gradient(0deg,rgba(5,11,18,.92),transparent);
-}
+/* ---------- HUD ---------- */
+.hud{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;align-items:center;gap:18px;padding:13px clamp(22px,3.4vw,64px);
+  font-family:var(--mono);font-size:11px;letter-spacing:.18em;color:var(--mut);background:linear-gradient(0deg,rgba(5,11,18,.92),transparent);}
 .hud .idx{color:var(--cyan)}
 .bar{flex:1;height:2px;background:rgba(159,196,221,.14);position:relative;overflow:hidden;border-radius:2px}
 .bar i{position:absolute;left:0;top:0;bottom:0;background:var(--cyan);width:0;transition:width .6s cubic-bezier(.16,1,.3,1);box-shadow:0 0 12px var(--cyan)}
 .hint{display:flex;gap:6px;align-items:center}
 .key{border:1px solid var(--line);border-radius:5px;padding:2px 7px;color:var(--ice);font-size:10px}
 .navbtns{display:flex;gap:8px}
-.navbtns button{
-  width:34px;height:34px;border-radius:8px;border:1px solid var(--line);
-  background:rgba(27,198,232,.06);color:var(--cyan);cursor:pointer;font-size:15px;
-  display:flex;align-items:center;justify-content:center;transition:.2s;
-}
+.navbtns button{width:36px;height:36px;border-radius:8px;border:1px solid var(--line);background:rgba(27,198,232,.06);color:var(--cyan);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:.2s;}
 .navbtns button:hover{background:var(--cyan);color:var(--ink)}
 
-/* =================== SLIDE 1 — COVER =================== */
-#s-cover{justify-content:flex-end;padding-bottom:120px}
+/* ---------- COVER ---------- */
+#s-cover{justify-content:center;padding-bottom:96px}
 .coverwrap{position:absolute;inset:0;z-index:0;overflow:hidden}
 .coverwrap video{width:100%;height:100%;object-fit:cover;opacity:.30;filter:saturate(1.1) contrast(1.05)}
 .coverwrap::after{content:"";position:absolute;inset:0;
-  background:
-   radial-gradient(120% 90% at 80% 10%,rgba(27,198,232,.16),transparent 55%),
-   linear-gradient(180deg,rgba(5,11,18,.66) 0%,rgba(5,11,18,.82) 55%,var(--ink) 100%);}
-.coverlogo{height:clamp(46px,6.4vw,82px);margin-bottom:28px;width:auto;
-  filter:drop-shadow(0 0 24px rgba(27,198,232,.18))}
-.cover-sub{font-family:var(--mono);font-size:clamp(12px,1.3vw,15px);letter-spacing:.2em;color:var(--ice);text-transform:uppercase;margin-top:6px}
-.cover-tag{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
-.chip{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
-  border:1px solid var(--line);border-radius:999px;padding:8px 14px;color:var(--ice);
-  background:rgba(7,23,38,.5);backdrop-filter:blur(4px)}
-.cover-meta{position:absolute;top:clamp(28px,5vw,90px);right:clamp(28px,5vw,90px);z-index:2;text-align:right}
-
-/* scanline accent */
-.scan{position:absolute;left:0;right:0;top:0;height:2px;z-index:3;
-  background:linear-gradient(90deg,transparent,var(--cyan),transparent);
-  animation:scanmove 6s linear infinite;opacity:.7}
+  background:radial-gradient(120% 90% at 80% 10%,rgba(27,198,232,.16),transparent 55%),
+   linear-gradient(180deg,rgba(5,11,18,.62) 0%,rgba(5,11,18,.74) 55%,var(--ink) 100%);}
+.coverlogo{width:min(54vw,800px);height:auto;margin-bottom:clamp(16px,2.4vh,34px);
+  filter:drop-shadow(0 10px 38px rgba(0,0,0,.6)) drop-shadow(0 0 34px rgba(27,198,232,.16))}
+.cover-sub{font-family:var(--mono);font-size:clamp(12px,1.3vw,16px);letter-spacing:.2em;color:var(--ice);text-transform:uppercase;margin-top:8px}
+.cover-tag{margin-top:24px;display:flex;flex-wrap:wrap;gap:10px}
+.chip{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:9px 16px;color:var(--ice);background:rgba(7,23,38,.5);backdrop-filter:blur(4px)}
+.cover-meta{position:absolute;top:clamp(20px,3.4vw,54px);right:clamp(22px,3.4vw,64px);z-index:2;text-align:right}
+.scan{position:absolute;left:0;right:0;top:0;height:2px;z-index:3;background:linear-gradient(90deg,transparent,var(--cyan),transparent);animation:scanmove 6s linear infinite;opacity:.7}
 @keyframes scanmove{0%{transform:translateY(0)}100%{transform:translateY(100vh)}}
 
-/* =================== generic content grid =================== */
-.body-grid{display:grid;gap:clamp(20px,3vw,46px);margin-top:clamp(22px,3vh,40px);flex:1;align-content:center}
+/* ---------- GRID HELPERS ---------- */
+.body-grid{display:grid;gap:clamp(22px,3vw,50px);margin-top:clamp(18px,2.4vh,34px);flex:1;align-content:center}
 .two{grid-template-columns:1fr 1fr}
-.head-block{max-width:70ch}
-.head-block h2{margin:14px 0 16px}
+.head-block{max-width:74ch}
+.head-block h2{margin:12px 0 14px}
 
-/* metric cards */
+/* metrics */
 .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.6vw,22px);margin-top:30px}
-.metric{border:1px solid var(--line-soft);border-radius:16px;padding:22px 20px;
-  background:linear-gradient(160deg,rgba(15,76,129,.18),rgba(7,23,38,.35));position:relative;overflow:hidden}
-.metric::after{content:"";position:absolute;top:0;left:0;width:34px;height:2px;background:var(--cyan)}
-.metric .num{font-family:var(--disp);font-weight:700;font-size:clamp(30px,3.6vw,46px);line-height:1;color:#fff}
+.metric{border:1px solid var(--line-soft);border-radius:16px;padding:24px 22px;background:linear-gradient(160deg,rgba(15,76,129,.18),rgba(7,23,38,.35));position:relative;overflow:hidden}
+.metric::after{content:"";position:absolute;top:0;left:0;width:36px;height:2px;background:var(--cyan)}
+.metric .num{font-family:var(--disp);font-weight:700;font-size:clamp(34px,4vw,52px);line-height:1;color:#fff}
 .metric .num .u{color:var(--cyan);font-size:.5em}
-.metric .lab{font-size:13px;color:var(--mut);margin-top:10px;line-height:1.4}
+.metric .lab{font-size:14.5px;color:var(--mut);margin-top:11px;line-height:1.4}
 
-/* service / pillar cards */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.5vw,20px);margin-top:clamp(18px,2.5vh,30px)}
-.card{border:1px solid var(--line-soft);border-radius:16px;padding:22px 22px;
-  background:rgba(7,23,38,.45);transition:.35s;position:relative}
+/* service cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.5vw,20px);margin-top:clamp(16px,2.2vh,28px)}
+.card{border:1px solid var(--line-soft);border-radius:16px;padding:22px 22px;background:rgba(7,23,38,.45);transition:.35s;position:relative}
 .card:hover{border-color:var(--cyan);transform:translateY(-4px);box-shadow:0 18px 50px -24px rgba(27,198,232,.5)}
-.card .ic{width:42px;height:42px;border-radius:11px;display:flex;align-items:center;justify-content:center;
-  border:1px solid var(--line);color:var(--cyan);margin-bottom:18px}
-.card .ic svg{width:22px;height:22px}
-.card h3{font-family:var(--disp);font-weight:600;font-size:19px;margin-bottom:10px}
-.card p{font-size:14px;color:var(--mut);line-height:1.55}
-.card .no{position:absolute;top:22px;right:24px;font-family:var(--mono);font-size:12px;color:var(--steel)}
+.card .ic{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;border:1px solid var(--line);color:var(--cyan);margin-bottom:16px}
+.card .ic svg{width:24px;height:24px}
+.card h3{font-family:var(--disp);font-weight:600;font-size:21px;margin-bottom:9px}
+.card p{font-size:15.5px;color:var(--mut);line-height:1.5}
+.card .no{position:absolute;top:22px;right:24px;font-family:var(--mono);font-size:13px;color:var(--steel)}
 
-/* list with cyan ticks */
+/* tick list */
 .tlist{list-style:none;display:flex;flex-direction:column;gap:14px}
-.tlist li{display:flex;gap:14px;align-items:flex-start;font-size:15px;color:var(--ice);line-height:1.5}
+.tlist li{display:flex;gap:14px;align-items:flex-start;font-size:17px;color:var(--ice);line-height:1.5}
 .tlist li b{color:#fff;font-weight:600}
-.tlist .dot{flex:none;margin-top:7px;width:7px;height:7px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+.tlist .dot{flex:none;margin-top:8px;width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
 
-/* CANVAS model — BMC */
-.bmc{display:grid;gap:8px;margin-top:20px;
-  grid-template-columns:repeat(5,1fr);grid-template-rows:1fr 1fr auto;flex:1;align-content:stretch}
-.bx{border:1px solid var(--line-soft);border-radius:12px;padding:13px 13px;background:rgba(7,23,38,.42);
-  display:flex;flex-direction:column;gap:7px;min-height:0;transition:.3s}
+/* CANVAS */
+.bmc{display:grid;gap:9px;margin-top:18px;grid-template-columns:repeat(5,1fr);grid-template-rows:1fr 1fr auto;flex:1;align-content:stretch}
+.bx{border:1px solid var(--line-soft);border-radius:12px;padding:14px 14px;background:rgba(7,23,38,.42);display:flex;flex-direction:column;gap:8px;min-height:0;transition:.3s}
 .bx:hover{border-color:var(--cyan);background:rgba(15,76,129,.22)}
-.bx .t{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--cyan);display:flex;gap:7px;align-items:center}
-.bx ul{list-style:none;display:flex;flex-direction:column;gap:4px}
-.bx li{font-size:11px;color:var(--ice);line-height:1.3;padding-left:11px;position:relative}
-.bx li::before{content:"";position:absolute;left:0;top:6px;width:4px;height:4px;border-radius:50%;background:var(--steel)}
+.bx .t{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);display:flex;gap:7px;align-items:center}
+.bx ul{list-style:none;display:flex;flex-direction:column;gap:5px}
+.bx li{font-size:12.5px;color:var(--ice);line-height:1.32;padding-left:12px;position:relative}
+.bx li::before{content:"";position:absolute;left:0;top:7px;width:4px;height:4px;border-radius:50%;background:var(--steel)}
 .bx.span2{grid-row:span 2}
 .bx.val{background:linear-gradient(160deg,rgba(27,198,232,.16),rgba(7,23,38,.4));border-color:var(--line)}
 .bx.val .t{color:#fff}
 
 /* tech pills */
-.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
-.pill{font-family:var(--mono);font-size:12px;letter-spacing:.04em;border:1px solid var(--line-soft);
-  border-radius:9px;padding:10px 15px;color:var(--ice);background:rgba(7,23,38,.4);transition:.3s}
+.pills{display:flex;flex-wrap:wrap;gap:11px;margin-top:26px}
+.pill{font-family:var(--mono);font-size:13.5px;letter-spacing:.04em;border:1px solid var(--line-soft);border-radius:9px;padding:12px 17px;color:var(--ice);background:rgba(7,23,38,.4);transition:.3s}
 .pill:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
 
-/* team */
-.team{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,18px);margin-top:24px}
-.tm{border:1px solid var(--line-soft);border-radius:18px;padding:20px 18px;background:rgba(7,23,38,.45);transition:.35s}
-.tm:hover{border-color:var(--cyan);transform:translateY(-4px)}
-.mono-av{width:54px;height:54px;border-radius:13px;display:flex;align-items:center;justify-content:center;
-  font-family:var(--disp);font-weight:700;font-size:20px;color:var(--ink);
-  background:linear-gradient(140deg,var(--cyan),var(--steel));margin-bottom:14px;letter-spacing:.02em}
-.photo-av{width:54px;height:54px;border-radius:13px;object-fit:cover;object-position:50% 28%;display:block;margin-bottom:14px;border:1px solid var(--line)}
-.tm h3{font-family:var(--disp);font-weight:600;font-size:15.5px;margin-bottom:4px;line-height:1.15}
-.tm .role{font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--cyan);text-transform:uppercase;margin-bottom:11px}
-.tm p{font-size:12px;color:var(--mut);line-height:1.5}
+/* TEAM — big full-image cards */
+.team{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.4vw,20px);margin-top:clamp(16px,2.2vh,28px);flex:1;align-content:center}
+.tm{border:1px solid var(--line-soft);border-radius:18px;background:rgba(7,23,38,.45);transition:.35s;overflow:hidden;display:flex;flex-direction:column}
+.tm:hover{border-color:var(--cyan);transform:translateY(-5px);box-shadow:0 22px 60px -30px rgba(27,198,232,.45)}
+.tm-media{width:100%;height:clamp(190px,30vh,330px);background:#06121e;display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:1px solid var(--line-soft)}
+.tm-media img,.tm-media video{width:100%;height:100%;object-fit:contain;display:block}
+.tm-mono{font-family:var(--disp);font-weight:700;font-size:68px;color:var(--steel);letter-spacing:.04em;background:linear-gradient(140deg,rgba(27,198,232,.12),rgba(7,23,38,.2));width:100%;height:100%;display:flex;align-items:center;justify-content:center}
+.tm-body{padding:16px 18px 20px}
+.tm h3{font-family:var(--disp);font-weight:600;font-size:clamp(15px,1.2vw,19px);margin-bottom:5px;line-height:1.15}
+.tm .role{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--cyan);text-transform:uppercase;margin-bottom:9px}
+.tm p{font-size:13px;color:var(--mut);line-height:1.45}
 
 /* case row */
-.caserow{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(22px,3vw,50px);flex:1;align-items:center;margin-top:22px}
-.casebadge{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;
-  text-transform:uppercase;color:var(--cyan);border:1px solid var(--line);border-radius:999px;padding:7px 14px;margin-bottom:18px}
+.caserow{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(22px,3vw,50px);flex:1;align-items:center;margin-top:18px}
+.casebadge{display:inline-flex;align-items:center;gap:9px;font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan);border:1px solid var(--line);border-radius:999px;padding:8px 15px;margin-bottom:16px}
 
-/* palletizer animated svg */
-.palstage{border:1px solid var(--line);border-radius:18px;background:
-  radial-gradient(120% 120% at 50% 0%,rgba(15,76,129,.25),rgba(7,23,38,.5));
-  padding:18px;position:relative;overflow:hidden}
-.palstage .lbl{position:absolute;top:14px;left:16px;font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--mut);text-transform:uppercase}
-.palstage .lbl2{position:absolute;bottom:14px;right:16px;font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:var(--cyan);text-transform:uppercase}
+/* MFS doc fan */
+.docfan{position:relative;height:clamp(320px,56vh,560px);display:flex;align-items:center;justify-content:center}
+.docfan img{position:absolute;height:92%;width:auto;border-radius:7px;box-shadow:0 34px 80px -30px rgba(0,0,0,.85);border:1px solid rgba(255,255,255,.45);background:#fff;transition:.45s}
+.docfan img:nth-child(1){transform:rotate(-10deg) translateX(-40%);z-index:1}
+.docfan img:nth-child(2){transform:rotate(0deg);z-index:3}
+.docfan img:nth-child(3){transform:rotate(10deg) translateX(40%);z-index:2}
+.docfan:hover img:nth-child(1){transform:rotate(-13deg) translateX(-54%)}
+.docfan:hover img:nth-child(3){transform:rotate(13deg) translateX(54%)}
 
-/* CTA / contact */
-#s-cta{justify-content:center;align-items:flex-start}
-.cta-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px;width:100%;max-width:1000px}
-.cta-card{border:1px solid var(--line-soft);border-radius:16px;padding:24px;background:rgba(7,23,38,.5);transition:.3s;text-decoration:none;color:inherit;display:block}
-.cta-card:hover{border-color:var(--cyan);transform:translateY(-4px)}
-.cta-card .ic{color:var(--cyan);margin-bottom:14px;display:block}
-.cta-card .k{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--mut);text-transform:uppercase}
-.cta-card .v{font-family:var(--disp);font-weight:600;font-size:17px;margin-top:6px;word-break:break-word}
-.ask{font-family:var(--disp);font-weight:700;font-size:clamp(26px,3.4vw,44px);line-height:1.08;letter-spacing:-.015em;max-width:20ch}
-
-/* invest ask highlight box */
-.askbox{border:1px solid var(--line);border-radius:18px;padding:clamp(20px,2.6vw,34px);
-  background:linear-gradient(150deg,rgba(15,76,129,.22),rgba(7,23,38,.4));margin-top:24px}
-.askbox .row{display:flex;flex-wrap:wrap;gap:30px}
-.askbox .it .k{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--mut);text-transform:uppercase}
-.askbox .it .v{font-family:var(--disp);font-weight:700;font-size:clamp(20px,2.4vw,30px);margin-top:8px;color:#fff}
-.askbox .it .v .u{color:var(--cyan);font-size:.55em}
-
-/* ===== ADDITIONS ===== */
-.logo-img{display:block;object-fit:contain;height:auto;max-width:100%}
-
-/* white brand cards (logos read on dark bg) */
-.brandcard{background:#fff;border-radius:16px;padding:16px 26px;display:inline-flex;align-items:center;justify-content:center;
-  box-shadow:0 24px 60px -28px rgba(0,0,0,.7);border:1px solid rgba(255,255,255,.65)}
-.brandcard.mfs img{height:clamp(34px,4vw,52px);width:auto}
-.miliwm{font-family:'Baloo 2',var(--disp);font-weight:800;color:#E2231A;font-size:clamp(40px,5vw,64px);line-height:1;letter-spacing:-.01em}
-.miliwm sup{font-size:.26em;font-weight:700;vertical-align:super;margin-left:3px;color:#E2231A}
-
-/* portrait phone video */
+/* portrait phone video (robot) — bigger */
 .phonewrap{display:flex;justify-content:center;align-items:center}
-.phoneframe{position:relative;aspect-ratio:478/850;height:min(60vh,500px);width:auto;border-radius:26px;overflow:hidden;
-  background:#000;border:2px solid var(--line);box-shadow:0 40px 100px -44px rgba(27,198,232,.6);cursor:pointer}
+.phoneframe{position:relative;aspect-ratio:478/850;height:min(76vh,720px);width:auto;border-radius:28px;overflow:hidden;background:#000;border:2px solid var(--line);box-shadow:0 44px 110px -44px rgba(27,198,232,.62);cursor:pointer}
 .phoneframe video{width:100%;height:100%;object-fit:cover;display:block}
-.speedbadge{position:absolute;top:12px;right:12px;z-index:4;font-family:var(--mono);font-size:11px;letter-spacing:.1em;
-  background:rgba(5,11,18,.7);color:var(--cyan);border:1px solid var(--line);border-radius:999px;padding:5px 11px;backdrop-filter:blur(4px)}
-.livedot{position:absolute;top:12px;left:12px;z-index:4;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:#fff;
-  background:rgba(226,35,26,.88);border-radius:999px;padding:5px 10px;display:flex;gap:6px;align-items:center}
+.speedbadge{position:absolute;top:14px;right:14px;z-index:4;font-family:var(--mono);font-size:12px;letter-spacing:.1em;background:rgba(5,11,18,.7);color:var(--cyan);border:1px solid var(--line);border-radius:999px;padding:6px 12px;backdrop-filter:blur(4px)}
+.livedot{position:absolute;top:14px;left:14px;z-index:4;font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:#fff;background:rgba(226,35,26,.88);border-radius:999px;padding:6px 11px;display:flex;gap:6px;align-items:center}
 .livedot::before{content:"";width:7px;height:7px;border-radius:50%;background:#fff;animation:blink 1.2s infinite}
 @keyframes blink{50%{opacity:.25}}
 
-/* document frame (proposal) */
-.docframe{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 34px 80px -32px rgba(0,0,0,.78);
-  border:1px solid rgba(255,255,255,.5);transform:rotate(-2.2deg);transition:.45s;max-width:300px}
+/* document frame (Mili) — bigger */
+.docframe{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 38px 90px -32px rgba(0,0,0,.8);border:1px solid rgba(255,255,255,.5);transform:rotate(-2.2deg);transition:.45s;width:min(34vw,440px)}
 .docframe:hover{transform:rotate(0) scale(1.03)}
 .docframe img{display:block;width:100%;height:auto}
 
 /* pricing tiers */
-.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
-.tier{border:1px solid var(--line-soft);border-radius:14px;padding:15px 15px;background:rgba(7,23,38,.5);position:relative}
-.tier .pk{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--mut);text-transform:uppercase}
-.tier .pv{font-family:var(--disp);font-weight:700;font-size:clamp(19px,2.2vw,26px);margin-top:7px;color:#fff}
+.tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:18px}
+.tier{border:1px solid var(--line-soft);border-radius:14px;padding:16px 16px;background:rgba(7,23,38,.5);position:relative}
+.tier .pk{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--mut);text-transform:uppercase}
+.tier .pv{font-family:var(--disp);font-weight:700;font-size:clamp(21px,2.4vw,30px);margin-top:8px;color:#fff}
 .tier .pv .c{color:var(--cyan);font-size:.62em}
-.tier .disc{position:absolute;top:-11px;right:11px;font-family:var(--mono);font-size:11px;color:var(--ink);background:var(--cyan);border-radius:999px;padding:3px 9px;font-weight:700}
+.tier .disc{position:absolute;top:-11px;right:11px;font-family:var(--mono);font-size:12px;color:var(--ink);background:var(--cyan);border-radius:999px;padding:3px 10px;font-weight:700}
 
 /* repo chip */
-.repochip{display:inline-flex;gap:10px;align-items:center;font-family:var(--mono);font-size:12px;color:var(--ice);
-  border:1px solid var(--line);border-radius:10px;padding:9px 14px;background:rgba(7,23,38,.5);margin-top:16px;text-decoration:none}
+.repochip{display:inline-flex;gap:10px;align-items:center;font-family:var(--mono);font-size:13px;color:var(--ice);border:1px solid var(--line);border-radius:10px;padding:10px 15px;background:rgba(7,23,38,.5);margin-top:16px;text-decoration:none}
 .repochip:hover{border-color:var(--cyan)}
-.repochip svg{width:16px;height:16px;color:var(--cyan);flex:none}
+.repochip svg{width:17px;height:17px;color:var(--cyan);flex:none}
 
-/* QR divulgação */
-.qrgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,26px);margin-top:28px;width:100%;max-width:920px}
-.qrcard{border:1px solid var(--line-soft);border-radius:18px;padding:20px;background:rgba(7,23,38,.5);text-align:center;transition:.3s;text-decoration:none;color:inherit;display:block}
+/* WorldSkills slide */
+.ws-stats{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+.ws-stat{border:1px solid var(--line-soft);border-radius:13px;padding:14px 20px;background:rgba(7,23,38,.5)}
+.ws-stat b{font-family:var(--disp);font-weight:700;font-size:clamp(22px,2.6vw,34px);color:#fff;display:block;line-height:1}
+.ws-stat span{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--mut);text-transform:uppercase}
+.ws-imgs{display:grid;grid-template-columns:1.25fr 1fr;gap:18px;margin-top:20px;flex:1;min-height:0}
+.ws-fig{position:relative;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:#06121e}
+.ws-fig img{width:100%;height:100%;object-fit:cover;display:block}
+.ws-fig figcaption{position:absolute;left:0;right:0;bottom:0;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:#fff;padding:18px 16px 12px;background:linear-gradient(0deg,rgba(5,11,18,.92),transparent)}
+
+/* QR */
+.qrgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.2vw,30px);margin-top:28px;width:100%;max-width:1000px}
+.qrcard{border:1px solid var(--line-soft);border-radius:18px;padding:22px;background:rgba(7,23,38,.5);text-align:center;transition:.3s;text-decoration:none;color:inherit;display:block}
 .qrcard:hover{border-color:var(--cyan);transform:translateY(-5px);box-shadow:0 24px 60px -30px rgba(27,198,232,.5)}
-.qrcard .qbox{background:#fff;border-radius:12px;padding:11px;width:100%;aspect-ratio:1;display:flex}
+.qrcard .qbox{background:#fff;border-radius:12px;padding:12px;width:100%;aspect-ratio:1;display:flex}
 .qrcard .qbox img{width:100%;height:100%;object-fit:contain;image-rendering:pixelated}
-.qrcard .qk{font-family:var(--mono);font-size:11px;letter-spacing:.14em;color:var(--cyan);text-transform:uppercase;margin-top:15px}
-.qrcard .qv{font-size:12.5px;color:var(--ice);margin-top:5px;word-break:break-word}
+.qrcard .qk{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--cyan);text-transform:uppercase;margin-top:16px}
+.qrcard .qv{font-size:13.5px;color:var(--ice);margin-top:6px;word-break:break-word}
 
 /* academic credit */
-.acad{font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--mut);line-height:1.7}
+.acad{font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--mut);line-height:1.7}
 .acad b{color:var(--ice);font-weight:500}
 .credit-band{margin-top:auto;padding-top:22px;border-top:1px solid var(--line-soft);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:flex-end}
 
-@media (max-width:860px){
+@media (max-width:900px){
   .metrics{grid-template-columns:repeat(2,1fr)}
-  .cards,.team,.cta-grid,.qrgrid,.tiers{grid-template-columns:1fr}
-  .two,.caserow{grid-template-columns:1fr}
+  .cards,.team,.qrgrid,.tiers{grid-template-columns:1fr}
+  .two,.caserow,.ws-imgs{grid-template-columns:1fr}
   .bmc{grid-template-columns:1fr 1fr;grid-auto-rows:auto}
   .bx.span2{grid-row:auto}
-  .hint{display:none}
-  .cover-meta{display:none}
-  .phoneframe{height:min(54vh,420px)}
+  .hint{display:none}.cover-meta{display:none}
+  .phoneframe{height:min(58vh,460px)}
+  .coverlogo{width:78vw}
 }
-@media (prefers-reduced-motion:reduce){
-  .slide{transition:opacity .2s}
-  .scan{display:none}
-  .r{transition:none!important;opacity:1!important;transform:none!important}
-}
-
-.pbox{opacity:0}
-.slide#s-mfs.active #pb1{animation:drop .6s .25s forwards}
-.slide#s-mfs.active #pb2{animation:drop .6s .65s forwards}
-.slide#s-mfs.active #pb3{animation:drop .6s 1.05s forwards}
-.slide#s-mfs.active #pb4{animation:drop .6s 1.45s forwards}
-@keyframes drop{0%{opacity:0;transform:translateY(-60px)}60%{opacity:1}100%{opacity:1;transform:translateY(0)}}
-.slide#s-mfs.active #grip{animation:gmove 1.6s ease-in-out infinite alternate}
-@keyframes gmove{0%{transform:translateX(-50px)}100%{transform:translateX(50px)}}
+@media (prefers-reduced-motion:reduce){.slide{transition:opacity .2s}.scan{display:none}.r{transition:none!important;opacity:1!important;transform:none!important}}
 </style>
 </head>
 <body>
 <div class="deck" id="deck">
 
-<!-- ============ 1 · COVER ============ -->
+<!-- 1 · COVER -->
 <section class="slide active" id="s-cover">
-  <div class="coverwrap"><video autoplay muted loop playsinline preload="auto" src="assets/mfs-demo.mp4"></video></div>
+  <div class="coverwrap"><video autoplay muted loop playsinline preload="auto" src="assets/cover.mp4"></video></div>
   <div class="scan"></div>
   <div class="cover-meta r">
     <div class="kicker">Apresentação institucional · Modelo de negócios</div>
     <div class="kicker" style="color:var(--cyan);margin-top:6px">Clientes · Parcerias · Investidores — 2026</div>
-    <div class="acad" style="margin-top:14px">
-      <b>Administração para Engenharia Elétrica</b><br>
-      Prof. James Alexandre Baraniuk<br>
-      André Victor Xavier Pires<br>
-      Gabriel Silverio Bernardelli
-    </div>
+    <div class="acad" style="margin-top:14px"><b>Administração para Engenharia Elétrica</b><br>Prof. James Alexandre Baraniuk<br>André Victor Xavier Pires<br>Gabriel Silverio Bernardelli</div>
   </div>
   <img class="coverlogo r" src="assets/anx-logo.svg" alt="ANX Consultoria e Soluções Industriais"/>
-  <h1 class="title r">Engenharia que a indústria<br><span class="cy">vê funcionando.</span></h1>
+  <h1 class="title r">Engenharia que a indústria <span class="cy">vê funcionando.</span></h1>
   <p class="cover-sub r">Automação · Robótica · Software Industrial · IoT · Capacitação Técnica</p>
   <div class="cover-tag r">
-    <span class="chip">100% personalizado</span>
-    <span class="chip">Documentado</span>
-    <span class="chip">Suporte de qualidade</span>
-    <span class="chip">Treinamentos in company</span>
+    <span class="chip">100% personalizado</span><span class="chip">Documentado</span><span class="chip">Suporte de qualidade</span><span class="chip">Treinamentos in company</span>
   </div>
 </section>
 
-<!-- ============ 2 · THESIS / PROBLEM ============ -->
+<!-- 2 · THESIS -->
 <section class="slide" id="s-thesis">
   <div class="railtop"><div class="brandmark">AN<span class="x">X</span></div><div class="kicker">01 — A oportunidade</div></div>
   <div class="head-block r"><span class="eyebrow">Por que agora</span>
-    <h2 class="head">A indústria automatiza<br>mais rápido do que a<br><span class="cy">pequena empresa consegue acompanhar.</span></h2>
+    <h2 class="head">A indústria automatiza mais rápido do que a <span class="cy">pequena empresa consegue acompanhar.</span></h2>
   </div>
   <p class="lead r" style="margin-top:18px">Pequenas e médias indústrias compram robôs, CLPs e células de ponta — e descobrem que <b style="color:#fff">não têm um time técnico dedicado</b> para programar, manter e extrair desempenho desses ativos. A ANX é esse time: <b style="color:#fff">terceirização que viabiliza a automação</b>, entregando engenharia, software e a formação das equipes — com documentação e suporte.</p>
   <div class="metrics r">
@@ -366,142 +259,119 @@ h2.head{font-family:var(--disp);font-weight:700;line-height:1.05;letter-spacing:
   </div>
 </section>
 
-<!-- ============ 3 · WHAT WE DELIVER (Produtos e Serviços / Valor) ============ -->
+<!-- 3 · SERVICES -->
 <section class="slide" id="s-services">
   <div class="railtop"><div class="brandmark">AN<span class="x">X</span></div><div class="kicker">02 — Produtos &amp; Serviços</div></div>
   <div class="head-block r" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:18px;max-width:none">
     <div><span class="eyebrow">O que entregamos</span>
-      <h2 class="head" style="margin-top:12px">Cinco entregas, uma <span class="cy">competência única</span>.</h2></div>
-    <p style="font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--mut);max-width:32ch;text-align:right;line-height:1.6">O valor agregado: <span class="cy">projeto, software e formação no mesmo fornecedor</span> — 100% sob medida, documentado e com suporte.</p>
+      <h2 class="head" style="margin-top:10px">Cinco entregas, uma <span class="cy">competência única</span>.</h2></div>
+    <p style="font-family:var(--mono);font-size:13px;letter-spacing:.04em;color:var(--mut);max-width:34ch;text-align:right;line-height:1.6">O valor agregado: <span class="cy">projeto, software e formação no mesmo fornecedor</span> — 100% sob medida, documentado e com suporte.</p>
   </div>
   <div class="cards" style="grid-template-columns:repeat(3,1fr);grid-auto-rows:1fr">
     <div class="card r"><span class="no">01</span>
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M17.5 14v7M14 17.5h7"/></svg></div>
-      <h3>Engenharia &amp; Automação</h3>
-      <p>Projeto e execução de células de automação, robótica e CLP — integração de sistemas e soluções de chão de fábrica com padrão industrial.</p></div>
+      <h3>Engenharia &amp; Automação</h3><p>Projeto e execução de células de automação, robótica e CLP — integração de sistemas e soluções de chão de fábrica com padrão industrial.</p></div>
     <div class="card r"><span class="no">02</span>
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><polyline points="8 7 3 12 8 17"/><polyline points="16 7 21 12 16 17"/><line x1="13" y1="4" x2="11" y2="20"/></svg></div>
-      <h3>Software Industrial &amp; IoT</h3>
-      <p>Sistemas supervisórios, editores de receita e integração via Node-RED. Inclui o <b style="color:var(--ice)">MFS Palletizer</b>, software proprietário em operação.</p></div>
+      <h3>Software Industrial &amp; IoT</h3><p>Sistemas supervisórios, editores de receita e integração via Node-RED. Inclui o <b style="color:var(--ice)">MFS Palletizer</b>, software proprietário em operação.</p></div>
     <div class="card r"><span class="no">03</span>
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg></div>
-      <h3>Treinamentos Técnicos</h3>
-      <p>Capacitação in company em robótica multimarca (KUKA, Yaskawa, Kawasaki), CLP e mecatrônica. Instrutores com vivência <b style="color:var(--ice)">SENAI e Bosch</b>.</p></div>
+      <h3>Treinamentos Técnicos</h3><p>Capacitação in company em robótica multimarca (KUKA, Yaskawa, Kawasaki), CLP e mecatrônica. Instrutores com vivência <b style="color:var(--ice)">SENAI e Bosch</b>.</p></div>
     <div class="card r"><span class="no">04</span>
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 12h6M9 16h6M9 8h6"/><path d="M6 2h9l5 5v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/></svg></div>
-      <h3>Documentação &amp; Suporte</h3>
-      <p>Cada entrega acompanha documentação técnica e operacional completa e suporte contínuo — o cliente fica autônomo, sem depender de uma só pessoa.</p></div>
+      <h3>Documentação &amp; Suporte</h3><p>Cada entrega acompanha documentação técnica e operacional completa e suporte contínuo — o cliente fica autônomo, sem depender de uma só pessoa.</p></div>
     <div class="card r">
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.5 2.5M16.5 16.5 19 19M19 5l-2.5 2.5M7.5 16.5 5 19"/><circle cx="12" cy="12" r="3.5"/></svg></div>
-      <h3>Consultoria &amp; Personalização</h3>
-      <p>Diagnóstico técnico e soluções sob medida — do levantamento à entrega validada, dimensionada para a realidade da pequena indústria.</p></div>
+      <h3>Consultoria &amp; Personalização</h3><p>Diagnóstico técnico e soluções sob medida — do levantamento à entrega validada, dimensionada para a realidade da pequena indústria.</p></div>
   </div>
 </section>
 
-<!-- ============ 4 · ROBOT IN ACTION (video 1.5x) ============ -->
+<!-- 4 · ROBOT VIDEO (2x) -->
 <section class="slide" id="s-robot">
   <div class="railtop"><div class="brandmark">AN<span class="x">X</span></div><div class="kicker">03 — Em operação</div></div>
   <div class="body-grid two" style="align-items:center">
     <div>
       <div class="casebadge r"><span style="width:7px;height:7px;border-radius:50%;background:var(--cyan);display:inline-block;box-shadow:0 0 8px var(--cyan)"></span>Case · Robô em produção</div>
-      <h2 class="head r">Software de paletização<br>rodando no <span class="cy">robô real.</span></h2>
+      <h2 class="head r">Software de paletização rodando no <span class="cy">robô real.</span></h2>
       <p class="lead r" style="margin-top:18px">Não é maquete: o editor visual de paletização da ANX (MFS) controla um robô industrial paletizando em linha — com camadas, validação de colisão e sincronização com o CLP.</p>
       <ul class="tlist r" style="margin-top:20px">
         <li><span class="dot"></span><span><b>Editor visual de receitas</b> — o operador monta o pallet na tela, sem reprogramar o robô.</span></li>
-        <li><span class="dot"></span><span><b>Validação automática</b> — limites do pallet, colisão e rotação tratados em tempo real.</span></li>
+        <li><span class="dot"></span><span><b>Validação automática</b> — limites do pallet, colisão e rotação em tempo real.</span></li>
         <li><span class="dot"></span><span><b>Integração com o PLC</b> — a receita desce direto para a célula em produção.</span></li>
       </ul>
     </div>
     <div class="phonewrap r">
       <div class="phoneframe" id="demowrap">
-        <span class="livedot">REC · AO VIVO</span>
-        <span class="speedbadge">1.5×</span>
-        <video id="demo" src="assets/mfs-demo.mp4" autoplay muted loop playsinline preload="auto"></video>
+        <span class="livedot">REC · AO VIVO</span><span class="speedbadge">2×</span>
+        <video id="demo" data-rate="2" src="assets/mfs-demo.mp4" autoplay muted loop playsinline preload="auto"></video>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 5 · MFS / PALLETIZER PRODUCT (empresa real + sucesso) ============ -->
+<!-- 5 · MFS PRODUCT (doc pages) -->
 <section class="slide" id="s-mfs">
   <div class="railtop"><div class="brandmark">AN<span class="x">X</span></div><div class="kicker">04 — Produto proprietário · sucesso real</div></div>
   <div class="caserow">
     <div>
-      <div class="brandcard mfs r" style="margin-bottom:18px"><img src="assets/mfs-logo.png" alt="MFS Robotics"/></div>
-      <h2 class="head r" style="font-size:clamp(26px,3.6vw,46px)">Um produto que já existe<br>e vira <span class="cy">receita recorrente.</span></h2>
-      <p class="lead r" style="margin-top:16px">O <b style="color:#fff">MFS Palletizer 2.0</b> é software industrial proprietário da ANX, em operação — um ativo que pode ser licenciado, customizado por cliente e escalado para novas células.</p>
-      <ul class="tlist r" style="margin-top:18px">
-        <li><span class="dot"></span><span><b>Camadas configuráveis</b> com múltiplos produtos por receita.</span></li>
-        <li><span class="dot"></span><span><b>Validação geométrica</b> de limites, colisão e rotação (múltiplos de 90°).</span></li>
-        <li><span class="dot"></span><span><b>Documentado de ponta a ponta</b> — IHM, robótica, treinamentos e manual do usuário.</span></li>
+      <div class="r" style="background:#fff;border-radius:16px;padding:14px 24px;display:inline-flex;box-shadow:0 24px 60px -28px rgba(0,0,0,.7);margin-bottom:16px"><img src="assets/mfs-logo.png" alt="MFS Robotics" style="height:clamp(34px,3.8vw,50px);width:auto;display:block"/></div>
+      <h2 class="head r" style="font-size:clamp(30px,3.9vw,50px)">Um produto que já existe e é <span class="cy">documentado de ponta a ponta.</span></h2>
+      <p class="lead r" style="margin-top:14px">O <b style="color:#fff">MFS Palletizer 2.0</b> é software industrial proprietário da ANX, em operação. Cada módulo tem documentação técnica e operacional — IHM, Robótica, Treinamentos e Manual do Usuário.</p>
+      <ul class="tlist r" style="margin-top:16px">
+        <li><span class="dot"></span><span><b>+130 páginas</b> de documentação técnica e operacional.</span></li>
+        <li><span class="dot"></span><span><b>Ativo licenciável</b> — customizável por cliente e escalável para novas células.</span></li>
       </ul>
       <a class="repochip r" href="https://github.com/andrevictorx/Documentacao-MFS" target="_blank">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49v-1.7c-2.78.62-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.94.85.09-.66.35-1.12.63-1.38-2.22-.26-4.55-1.14-4.55-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05a9.4 9.4 0 0 1 5 0c1.91-1.32 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.06.36.32.68.94.68 1.9v2.81c0 .27.18.59.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
-        github.com/andrevictorx/Documentacao-MFS · documentação técnica (privada)
+        github.com/andrevictorx/Documentacao-MFS
       </a>
     </div>
     <div class="r">
-      <div class="palstage">
-        <span class="lbl">MFS · Pallet 2×2 · live</span>
-        <svg viewBox="0 0 360 300" width="100%" height="100%" style="display:block">
-          <defs>
-            <linearGradient id="box" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#1BC6E8" stop-opacity=".9"/>
-              <stop offset="1" stop-color="#0F4C81" stop-opacity=".9"/>
-            </linearGradient>
-          </defs>
-          <rect x="40" y="220" width="280" height="40" rx="4" fill="none" stroke="#0F4C81" stroke-width="2"/>
-          <line x1="40" y1="240" x2="320" y2="240" stroke="#0F4C81" stroke-width="1" opacity=".5"/>
-          <rect x="70" y="60" width="220" height="150" fill="none" stroke="rgba(159,196,221,.18)" stroke-dasharray="4 5"/>
-          <line x1="180" y1="60" x2="180" y2="210" stroke="rgba(159,196,221,.14)" stroke-dasharray="4 5"/>
-          <line x1="70" y1="135" x2="290" y2="135" stroke="rgba(159,196,221,.14)" stroke-dasharray="4 5"/>
-          <g class="pbox" id="pb1"><rect x="76" y="140" width="98" height="62" rx="3" fill="url(#box)" stroke="#1BC6E8"/></g>
-          <g class="pbox" id="pb2"><rect x="186" y="140" width="98" height="62" rx="3" fill="url(#box)" stroke="#1BC6E8"/></g>
-          <g class="pbox" id="pb3"><rect x="76" y="70" width="98" height="62" rx="3" fill="url(#box)" stroke="#1BC6E8"/></g>
-          <g class="pbox" id="pb4"><rect x="186" y="70" width="98" height="62" rx="3" fill="url(#box)" stroke="#1BC6E8"/></g>
-          <g id="grip"><line x1="180" y1="0" x2="180" y2="30" stroke="#1BC6E8" stroke-width="2"/><rect x="166" y="28" width="28" height="12" rx="2" fill="none" stroke="#1BC6E8" stroke-width="2"/></g>
-        </svg>
-        <span class="lbl2">colisão: 0 · receita válida ✓</span>
+      <div class="docfan">
+        <img src="assets/mfs-doc-ihm.png" alt="Documentação Técnica da IHM — MFS"/>
+        <img src="assets/mfs-doc-manual.png" alt="Manual do Usuário — MFS Palletizer"/>
+        <img src="assets/mfs-doc-robotica.png" alt="Documentação de Robótica — MFS"/>
       </div>
+      <p class="kicker r" style="text-align:center;margin-top:10px;text-transform:none;letter-spacing:.04em">IHM · Robótica · Treinamentos · Manual do Usuário</p>
     </div>
   </div>
 </section>
 
-<!-- ============ 6 · CASE MILI (serviço entregue + proposta) ============ -->
+<!-- 6 · MILI -->
 <section class="slide" id="s-mili">
   <div class="railtop"><div class="brandmark">AN<span class="x">X</span></div><div class="kicker">05 — Serviço entregue · cliente real</div></div>
-  <div class="caserow" style="grid-template-columns:1.15fr .85fr">
+  <div class="caserow" style="grid-template-columns:1.1fr .9fr">
     <div>
-      <div style="display:flex;align-items:center;gap:16px;margin-bottom:16px" class="r">
-        <div class="brandcard" style="padding:12px 22px"><span class="miliwm">mili<sup>®</sup></span></div>
+      <div style="display:flex;align-items:center;gap:16px;margin-bottom:14px" class="r">
+        <div style="background:#fff;border-radius:14px;padding:12px 24px;display:inline-flex;box-shadow:0 22px 50px -26px rgba(0,0,0,.7)"><span style="font-family:'Baloo 2',var(--disp);font-weight:800;color:#E2231A;font-size:clamp(40px,4.6vw,60px);line-height:1">mili<sup style="font-size:.26em;vertical-align:super">®</sup></span></div>
         <span class="casebadge" style="margin:0"><span style="width:7px;height:7px;border-radius:50%;background:var(--cyan);display:inline-block;box-shadow:0 0 8px var(--cyan)"></span>Mili S.A.</span>
       </div>
-      <h2 class="head r" style="font-size:clamp(26px,3.6vw,46px)">Capacitação que vira<br><span class="cy">indicador de manutenção.</span></h2>
-      <p class="lead r" style="margin-top:14px">A Mili opera robôs KUKA, Yaskawa e Kawasaki. A ANX estruturou um programa de capacitação <b style="color:#fff">in company</b>, modular por fabricante, construído sobre as <b style="color:#fff">células e aplicações reais</b> da planta — não em exemplos genéricos de laboratório.</p>
-      <ul class="tlist r" style="margin-top:16px">
-        <li><span class="dot"></span><span><b>Entrega na planta</b> — 20h por turma, teórico-prático, conduzido no robô real (Logística).</span></li>
-        <li><span class="dot"></span><span><b>Relacionamento consultivo</b> — reunião de alinhamento, conteúdo adaptado e certificado ANX.</span></li>
+      <h2 class="head r" style="font-size:clamp(28px,3.8vw,48px)">Capacitação que vira <span class="cy">indicador de manutenção.</span></h2>
+      <p class="lead r" style="margin-top:12px">A Mili opera robôs KUKA, Yaskawa e Kawasaki. A ANX estruturou um programa de capacitação <b style="color:#fff">in company</b>, modular por fabricante, construído sobre as <b style="color:#fff">células e aplicações reais</b> da planta.</p>
+      <ul class="tlist r" style="margin-top:14px">
+        <li><span class="dot"></span><span><b>Entrega na planta</b> — 20h por turma, teórico-prático, no robô real (Logística).</span></li>
+        <li><span class="dot"></span><span><b>Relacionamento consultivo</b> — alinhamento, conteúdo adaptado e certificado ANX.</span></li>
       </ul>
       <div class="tiers r">
         <div class="tier"><div class="pk">1ª turma</div><div class="pv"><span style="font-size:.6em;color:#fff">Sob consulta</span></div></div>
         <div class="tier"><span class="disc">−17%</span><div class="pk">2ª e 3ª turma</div><div class="pv"><span style="font-size:.6em;color:#fff">Sob consulta</span></div></div>
-        <div class="tier"><span class="disc">−25%</span><div class="pk">4ª turma em diante</div><div class="pv"><span style="font-size:.6em;color:#fff">Sob consulta</span></div></div>
+        <div class="tier"><span class="disc">−25%</span><div class="pk">4ª turma+</div><div class="pv"><span style="font-size:.6em;color:#fff">Sob consulta</span></div></div>
       </div>
-      <p class="kicker r" style="margin-top:12px;text-transform:none;letter-spacing:.04em;color:var(--mut)">Estratégia de preços: política de desconto por escala — Proposta ANX-2026-001.</p>
+      <p class="kicker r" style="margin-top:11px;text-transform:none;letter-spacing:.04em;color:var(--mut)">Estratégia de preços: desconto por escala — Proposta ANX-2026-001.</p>
     </div>
     <div class="phonewrap r" style="justify-content:flex-end">
-      <div class="docframe"><img src="assets/proposta-mili.png" alt="Proposta ANX-2026-001 preparada para Mili S.A."/></div>
+      <div class="docframe"><img src="assets/proposta-mili.png" alt="Proposta ANX-2026-001 — Mili S.A."/></div>
     </div>
   </div>
 </section>
 
-<!-- ============ 7 · BUSINESS MODEL (CANVAS) ============ -->
+<!-- 7 · CANVAS -->
 <section class="slide" id="s-canvas">
   <div class="railtop"><div class="brandmark">AN<span class="x">X</span></div><div class="kicker">06 — Modelo de Negócios CANVAS</div></div>
   <div class="head-block r" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:14px;max-width:none">
     <div><span class="eyebrow">Business Model Canvas</span>
-    <h2 class="head" style="font-size:clamp(22px,3vw,36px);margin:8px 0 0">Como a ANX <span class="cy">cria, entrega e captura valor</span>.</h2></div>
-    <p style="font-family:var(--mono);font-size:11px;color:var(--mut);letter-spacing:.04em">Osterwalder &amp; Pigneur · Business Model Generation</p>
+    <h2 class="head" style="font-size:clamp(24px,3.2vw,40px);margin:6px 0 0">Como a ANX <span class="cy">cria, entrega e captura valor</span>.</h2></div>
+    <p style="font-family:var(--mono);font-size:12px;color:var(--mut);letter-spacing:.04em">Osterwalder &amp; Pigneur · Business Model Generation</p>
   </div>
   <div class="bmc">
     <div class="bx span2 r"><div class="t"><span>◇</span>Parcerias Chaves</div><ul>
@@ -546,7 +416,7 @@ h2.head{font-family:var(--disp);font-weight:700;line-height:1.05;letter-spacing:
   </div>
 </section>
 
-<!-- ============ 8 · TECH STACK ============ -->
+<!-- 8 · TECH -->
 <section class="slide" id="s-tech">
   <div class="railtop"><div class="brandmark">AN<span class="x">X</span></div><div class="kicker">07 — Recursos &amp; Tecnologias</div></div>
   <div class="head-block r"><span class="eyebrow">Stack industrial</span>
@@ -560,84 +430,64 @@ h2.head{font-family:var(--disp);font-weight:700;line-height:1.05;letter-spacing:
   </div>
 </section>
 
-<!-- ============ 9 · TEAM ============ -->
+<!-- 9 · TEAM -->
 <section class="slide" id="s-team">
   <div class="railtop"><div class="brandmark">AN<span class="x">X</span></div><div class="kicker">08 — Time que executa</div></div>
   <div class="head-block r"><span class="eyebrow">Quem entrega</span>
-    <h2 class="head" style="font-size:clamp(24px,3.4vw,42px);margin-top:12px">Instrutores e engenheiros com vivência <span class="cy">SENAI, Bosch e WorldSkills</span>.</h2></div>
+    <h2 class="head" style="font-size:clamp(26px,3.6vw,46px);margin-top:10px">Engenheiros e instrutores com vivência <span class="cy">SENAI, Bosch e WorldSkills</span>.</h2></div>
   <div class="team">
-    <div class="tm r"><div class="mono-av">AV</div>
-      <h3>André Victor Xavier Pires</h3><div class="role">Hardware &amp; Sistemas Embarcados</div>
-      <p>Técnico em Mecânica (IFPR) e Mecatrônica (SENAI), graduando em Eng. Elétrica (UFPR). Hardware, eletrônica aplicada e sistemas embarcados.</p></div>
-    <div class="tm r"><img class="photo-av" src="assets/gabriel.png" alt="Gabriel Silverio Bernardelli"/>
-      <h3>Gabriel Silverio Bernardelli</h3><div class="role">Eletrônica · WorldSkills</div>
-      <p>Medalhista na Seleção SENAI WorldSkills (Eletrônica), graduando em Eng. Elétrica (UFPR). Eletrônica analógica/digital, instrumentação e bancadas didáticas.</p></div>
-    <div class="tm r"><img class="photo-av" src="assets/patrick.png" alt="Patrick H. de Souza Pereira"/>
-      <h3>Patrick H. de Souza Pereira</h3><div class="role">Robótica Integrada · WorldSkills</div>
-      <p>Treinador e avaliador WorldSkills em Sistemas Robóticos Integrados. Instrutor em Ciber Sistemas e Manufatura Avançada. Téc. Mecatrônica (SENAI).</p></div>
-    <div class="tm r"><div class="mono-av">LT</div>
-      <h3>Lucas Trinoski</h3><div class="role">Treinamento &amp; Alto Desempenho</div>
-      <p>Instrutor técnico no SENAI, treinador e avaliador WorldSkills. Forte em padronização de provas e formação de equipes de alto desempenho.</p></div>
+    <div class="tm r"><div class="tm-media"><video src="assets/andre.mp4" autoplay muted loop playsinline preload="auto"></video></div>
+      <div class="tm-body"><h3>André Victor Xavier Pires</h3><div class="role">Hardware &amp; Sistemas Embarcados</div>
+      <p>Téc. Mecânica (IFPR) e Mecatrônica (SENAI), graduando em Eng. Elétrica (UFPR).</p></div></div>
+    <div class="tm r"><div class="tm-media"><img src="assets/podium.jpg" alt="Gabriel no pódio WorldSkills"/></div>
+      <div class="tm-body"><h3>Gabriel Silverio Bernardelli</h3><div class="role">Eletrônica · WorldSkills</div>
+      <p>Medalhista na Seleção SENAI WorldSkills (Eletrônica), graduando em Eng. Elétrica (UFPR).</p></div></div>
+    <div class="tm r"><div class="tm-media"><img src="assets/patrick-full.jpg" alt="Patrick programando cobô"/></div>
+      <div class="tm-body"><h3>Patrick H. de Souza Pereira</h3><div class="role">Robótica Integrada · WorldSkills</div>
+      <p>Treinador e avaliador WorldSkills em Sistemas Robóticos Integrados. Téc. Mecatrônica (SENAI).</p></div></div>
+    <div class="tm r"><div class="tm-media"><div class="tm-mono">LT</div></div>
+      <div class="tm-body"><h3>Lucas Trinoski</h3><div class="role">Treinamento &amp; Alto Desempenho</div>
+      <p>Instrutor técnico no SENAI, treinador e avaliador WorldSkills. Padronização de provas.</p></div></div>
   </div>
-  <p class="acad r" style="margin-top:18px">Experiência docente da equipe: <b>instrução técnica no SENAI</b> e <b>Aprendizagem Industrial na Bosch</b> — a mesma metodologia de formação que aplicamos in company nos clientes.</p>
+  <p class="acad r" style="margin-top:14px">Experiência docente: <b>instrução técnica no SENAI</b> e <b>Aprendizagem Industrial na Bosch</b> — a mesma metodologia de formação que aplicamos in company.</p>
 </section>
 
-<!-- ============ 10 · CTA / INVEST ============ -->
-<section class="slide" id="s-cta">
-  <div class="railtop"><div class="brandmark">AN<span class="x">X</span></div><div class="kicker">09 — Contrate &amp; invista</div></div>
-  <span class="eyebrow r">O convite</span>
-  <h2 class="ask r" style="margin-top:14px">Contrate um projeto — ou invista no crescimento da <span class="cy">ANX.</span></h2>
-  <p class="lead r" style="margin-top:16px">O modelo já está validado com clientes reais e software proprietário. O próximo passo é <b style="color:#fff">capacidade</b>: mais células entregues, o MFS licenciado para novos clientes e a operação de treinamento ampliada.</p>
-
-  <div class="askbox r">
-    <div class="row">
-      <div class="it"><div class="k">Para investir em</div><div class="v">Capacidade de entrega</div></div>
-      <div class="it"><div class="k">Escala via</div><div class="v">Licenciamento do <span style="color:var(--cyan)">MFS</span></div></div>
-      <div class="it"><div class="k">Receita recorrente</div><div class="v">Treinamentos in company</div></div>
-    </div>
+<!-- 10 · WORLDSKILLS -->
+<section class="slide" id="s-worldskills">
+  <div class="railtop"><div class="brandmark">AN<span class="x">X</span></div><div class="kicker">09 — Reconhecimento internacional</div></div>
+  <div class="head-block r" style="max-width:none"><span class="eyebrow">O ecossistema da nossa equipe</span>
+    <h2 class="head" style="font-size:clamp(28px,3.9vw,52px);margin-top:8px">WorldSkills — as <span class="cy">Olimpíadas das Profissões.</span></h2></div>
+  <p class="lead r" style="margin-top:10px;max-width:96ch">O maior campeonato de educação profissional do mundo: a cada dois anos, competidores de até 25 anos representam seus países disputando dezenas de ocupações técnicas. É desse ambiente de altíssima performance — onde o Brasil (SENAI) é potência — que vem parte da equipe ANX.</p>
+  <div class="ws-stats r">
+    <div class="ws-stat"><b>85+</b><span>países / regiões membros</span></div>
+    <div class="ws-stat"><b>60+</b><span>profissões em disputa</span></div>
+    <div class="ws-stat"><b>1.500+</b><span>competidores por edição</span></div>
+    <div class="ws-stat"><b>a cada 2 anos</b><span>mundial · desde 1950</span></div>
   </div>
-
-  <div class="cta-grid r">
-    <a class="cta-card" href="https://wa.me/5541997143996" target="_blank">
-      <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M21 11.5a8.5 8.5 0 0 1-12.8 7.3L3 20l1.3-5A8.5 8.5 0 1 1 21 11.5z"/></svg></span>
-      <span class="k">WhatsApp</span><div class="v">+55 41 99714-3996</div></a>
-    <a class="cta-card" href="mailto:anxconsultoriaindustrial@gmail.com">
-      <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
-      <span class="k">E-mail</span><div class="v">anxconsultoriaindustrial@gmail.com</div></a>
-    <a class="cta-card" href="https://andrevictorx.github.io/anx-site/" target="_blank">
-      <span class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18z"/></svg></span>
-      <span class="k">Site</span><div class="v">andrevictorx.github.io/anx-site</div></a>
+  <div class="ws-imgs r">
+    <figure class="ws-fig"><img src="assets/ws-arena.jpg" alt="Cerimônia WorldSkills Kazan 2019"/><figcaption>Cerimônia de abertura · WorldSkills Kazan 2019 — milhares de competidores e visitantes</figcaption></figure>
+    <figure class="ws-fig"><img src="assets/podium.jpg" alt="Bernardelli no pódio da Seleção SENAI WorldSkills"/><figcaption>Bernardelli no pódio · Seleção SENAI WorldSkills — Eletrônica</figcaption></figure>
   </div>
 </section>
 
-<!-- ============ 11 · DIVULGAÇÃO / QR / OBRIGADO ============ -->
+<!-- 11 · QR / OBRIGADO -->
 <section class="slide" id="s-qr" style="justify-content:center;align-items:center;text-align:center">
-  <img class="coverlogo r" src="assets/anx-logo.svg" alt="ANX" style="height:clamp(40px,5vw,64px);margin-bottom:18px"/>
-  <h2 class="head r" style="font-size:clamp(30px,4.4vw,56px)">Vamos construir <span class="cy">juntos.</span></h2>
+  <img class="r" src="assets/anx-logo.svg" alt="ANX" style="width:min(34vw,420px);height:auto;margin-bottom:18px;filter:drop-shadow(0 0 28px rgba(27,198,232,.18))"/>
+  <h2 class="head r" style="font-size:clamp(32px,4.6vw,58px)">Vamos construir <span class="cy">juntos.</span></h2>
   <p class="lead r" style="margin-top:12px;text-align:center;margin-left:auto;margin-right:auto">Aponte a câmera e siga a ANX — conteúdo técnico, cases e novos projetos.</p>
   <div class="qrgrid r">
-    <a class="qrcard" href="https://www.instagram.com/anx.automacao/" target="_blank">
-      <div class="qbox"><img src="assets/qr-instagram.png" alt="QR Instagram ANX"/></div>
-      <div class="qk">Instagram</div><div class="qv">@anx.automacao</div></a>
-    <a class="qrcard" href="https://www.linkedin.com/company/anx-automa%C3%A7%C3%A3o-industrial/" target="_blank">
-      <div class="qbox"><img src="assets/qr-linkedin.png" alt="QR LinkedIn ANX"/></div>
-      <div class="qk">LinkedIn</div><div class="qv">ANX Automação Industrial</div></a>
-    <a class="qrcard" href="https://andrevictorx.github.io/anx-site/?utm_source=qr&utm_medium=apresentacao" target="_blank">
-      <div class="qbox"><img src="assets/qr-site.png" alt="QR Site ANX"/></div>
-      <div class="qk">Site oficial</div><div class="qv">andrevictorx.github.io/anx-site</div></a>
+    <a class="qrcard" href="https://www.instagram.com/anx.automacao/" target="_blank"><div class="qbox"><img src="assets/qr-instagram.png" alt="QR Instagram ANX"/></div><div class="qk">Instagram</div><div class="qv">@anx.automacao</div></a>
+    <a class="qrcard" href="https://www.linkedin.com/company/anx-automa%C3%A7%C3%A3o-industrial/" target="_blank"><div class="qbox"><img src="assets/qr-linkedin.png" alt="QR LinkedIn ANX"/></div><div class="qk">LinkedIn</div><div class="qv">ANX Automação Industrial</div></a>
+    <a class="qrcard" href="https://andrevictorx.github.io/anx-site/?utm_source=qr&utm_medium=apresentacao" target="_blank"><div class="qbox"><img src="assets/qr-site.png" alt="QR Site ANX"/></div><div class="qk">Site oficial</div><div class="qv">andrevictorx.github.io/anx-site</div></a>
   </div>
-  <div class="credit-band r" style="width:100%;max-width:920px;text-align:left">
-    <div class="brandmark" style="font-size:20px">AN<span class="x">X</span> <span style="font-family:var(--mono);font-size:10px;color:var(--mut);letter-spacing:.18em;margin-left:6px">CNPJ 63.999.774/0001-98</span></div>
-    <div class="acad" style="text-align:right">
-      <b>Administração para Engenharia Elétrica</b> · Prof. James Alexandre Baraniuk<br>
-      André Victor Xavier Pires · Gabriel Silverio Bernardelli
-    </div>
+  <div class="credit-band r" style="width:100%;max-width:1000px;text-align:left">
+    <div class="brandmark" style="font-size:22px">AN<span class="x">X</span> <span style="font-family:var(--mono);font-size:11px;color:var(--mut);letter-spacing:.18em;margin-left:6px">CNPJ 63.999.774/0001-98</span></div>
+    <div class="acad" style="text-align:right"><b>Administração para Engenharia Elétrica</b> · Prof. James Alexandre Baraniuk<br>André Victor Xavier Pires · Gabriel Silverio Bernardelli</div>
   </div>
 </section>
 
 </div>
 
-<!-- ============ HUD ============ -->
 <div class="hud">
   <span><span class="idx" id="cur">01</span> / <span id="tot">11</span></span>
   <span class="bar"><i id="barfill"></i></span>
@@ -652,30 +502,24 @@ document.getElementById('tot').textContent=String(tot).padStart(2,'0');
 function show(n){
   n=Math.max(0,Math.min(tot-1,n));
   slides.forEach((s,k)=>{s.classList.remove('active','prev');if(k<n)s.classList.add('prev');});
-  slides[n].classList.add('active');
-  i=n;
+  slides[n].classList.add('active');i=n;
   document.getElementById('cur').textContent=String(n+1).padStart(2,'0');
   document.getElementById('barfill').style.width=((n+1)/tot*100)+'%';
 }
 function next(){show(i+1)}function prev(){show(i-1)}
-document.getElementById('next').onclick=next;
-document.getElementById('prev').onclick=prev;
+document.getElementById('next').onclick=next;document.getElementById('prev').onclick=prev;
 addEventListener('keydown',e=>{
   if(e.key==='ArrowRight'||e.key==='PageDown'||e.key===' '){e.preventDefault();next();}
   else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();prev();}
   else if(e.key==='Home'){show(0);}else if(e.key==='End'){show(tot-1);}
   else if(e.key==='f'||e.key==='F'){if(!document.fullscreenElement)document.documentElement.requestFullscreen?.();else document.exitFullscreen?.();}
 });
-// touch swipe
 let tx=0;addEventListener('touchstart',e=>tx=e.changedTouches[0].clientX,{passive:true});
 addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50){d<0?next():prev();}},{passive:true});
-// wheel (debounced)
 let wlock=false;addEventListener('wheel',e=>{if(wlock)return;if(Math.abs(e.deltaY)<24)return;wlock=true;e.deltaY>0?next():prev();setTimeout(()=>wlock=false,720);},{passive:true});
 document.getElementById('barfill').style.width=(1/tot*100)+'%';
-
-// videos at 1.5x + click-to-pause on the demo
-function setRate(v){try{v.playbackRate=1.5;}catch(e){}}
-document.querySelectorAll('video').forEach(v=>{ setRate(v); v.addEventListener('loadedmetadata',()=>setRate(v)); v.addEventListener('play',()=>setRate(v)); });
+// videos: muted, per-element playback rate (robot = 2x)
+document.querySelectorAll('video').forEach(v=>{const r=parseFloat(v.dataset.rate||'1');const set=()=>{try{v.playbackRate=r;v.muted=true;}catch(e){}};set();v.addEventListener('loadedmetadata',set);v.addEventListener('play',set);});
 const demoWrap=document.getElementById('demowrap'),demo=document.getElementById('demo');
 if(demoWrap&&demo){demoWrap.addEventListener('click',()=>{demo.paused?demo.play():demo.pause();});}
 </script>
