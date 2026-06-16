@@ -133,6 +133,12 @@ h2.head{font-family:var(--disp);font-weight:700;line-height:1.04;letter-spacing:
 .pills{display:flex;flex-wrap:wrap;gap:11px;margin-top:26px}
 .pill{font-family:var(--mono);font-size:13.5px;letter-spacing:.04em;border:1px solid var(--line-soft);border-radius:9px;padding:12px 17px;color:var(--ice);background:rgba(7,23,38,.4);transition:.3s}
 .pill:hover{border-color:var(--cyan);color:var(--cyan);transform:translateY(-2px)}
+/* brand logo cards */
+.logogrid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(13px,1.5vw,22px);margin-top:clamp(16px,2.2vh,28px);flex:1;align-content:center}
+.logocard{background:#fff;border-radius:18px;padding:clamp(16px,1.8vw,26px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;transition:.3s;border:1px solid rgba(255,255,255,.6);box-shadow:0 16px 44px -26px rgba(0,0,0,.65)}
+.logocard:hover{transform:translateY(-6px);box-shadow:0 26px 60px -26px rgba(27,198,232,.55)}
+.logocard img{height:clamp(42px,5.2vw,72px);width:auto;max-width:92%;object-fit:contain;display:block}
+.logocard .cat{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#0F4C81;font-weight:500}
 
 /* TEAM — big full-image cards */
 .team{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(18px,2.4vw,32px);margin-top:clamp(16px,2.2vh,28px);flex:1;align-content:center;max-width:920px;margin-inline:auto;width:100%}
@@ -437,12 +443,19 @@ h2.head{font-family:var(--disp);font-weight:700;line-height:1.04;letter-spacing:
   <div class="railtop"><div class="brandmark">AN<span class="x">X</span></div><div class="kicker">08 — Recursos &amp; Tecnologias</div></div>
   <div class="head-block r"><span class="eyebrow">Stack industrial</span>
     <h2 class="head">Tecnologias &amp; <span class="cy">plataformas</span> que dominamos.</h2></div>
-  <p class="lead r" style="margin-top:16px">Trabalhamos com as plataformas mais usadas na indústria nacional e internacional, aplicando boas práticas de automação, segurança e padronização — sempre documentadas.</p>
-  <div class="pills">
-    <span class="pill r">CLPs Siemens</span><span class="pill r">CLPs WEG</span><span class="pill r">CLPs Mitsubishi</span>
-    <span class="pill r">Robôs KUKA</span><span class="pill r">Robôs YASKAWA</span><span class="pill r">Robôs KAWASAKI</span>
-    <span class="pill r">KEBA Automation</span><span class="pill r">Node-RED</span><span class="pill r">Redes Industriais</span>
-    <span class="pill r">Sistemas Supervisórios</span><span class="pill r">Instrumentação</span><span class="pill r">Eletrônica Analógica &amp; Digital</span>
+  <p class="lead r" style="margin-top:12px">As plataformas mais usadas na indústria nacional e internacional — sempre com boas práticas de automação, segurança e documentação.</p>
+  <div class="logogrid r">
+    <div class="logocard"><img src="assets/brand-kuka.png" alt="KUKA"/><span class="cat">Robôs</span></div>
+    <div class="logocard"><img src="assets/brand-yaskawa.png" alt="Yaskawa"/><span class="cat">Robôs</span></div>
+    <div class="logocard"><img src="assets/brand-kawasaki.png" alt="Kawasaki"/><span class="cat">Robôs</span></div>
+    <div class="logocard"><img src="assets/brand-siemens.png" alt="Siemens"/><span class="cat">CLP</span></div>
+    <div class="logocard"><img src="assets/brand-weg.png" alt="WEG"/><span class="cat">CLP · Drives</span></div>
+    <div class="logocard"><img src="assets/brand-mitsubishi.png" alt="Mitsubishi Electric"/><span class="cat">CLP</span></div>
+    <div class="logocard"><img src="assets/brand-keba.png" alt="KEBA"/><span class="cat">Automação</span></div>
+    <div class="logocard"><img src="assets/brand-nodered.png" alt="Node-RED"/><span class="cat">IoT · Software</span></div>
+  </div>
+  <div class="pills r" style="margin-top:16px;justify-content:center">
+    <span class="pill">Redes Industriais</span><span class="pill">Sistemas Supervisórios</span><span class="pill">Instrumentação</span><span class="pill">Eletrônica Analógica &amp; Digital</span>
   </div>
 </section>
 
